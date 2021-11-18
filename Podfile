@@ -1,0 +1,13 @@
+project 'PagerView_tutorial.xcodeproj'
+
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'PagerView_tutorial' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for PagerView_tutorial
+  pod 'FSPagerView'
+
+end

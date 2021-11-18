@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PagerView_tutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BnH-ny-tXY" userLabel="pagerContainer">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xW-LI-z0H" userLabel="pagerView" customClass="FSPagerView" customModule="FSPagerView">
+                                        <rect key="frame" x="0.0" y="259" width="414" height="300"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="fQZ-Sx-ONa"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MTb-R5-vYk" userLabel="pageControl" customClass="FSPageControl" customModule="FSPagerView">
+                                        <rect key="frame" x="30" y="574" width="354" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="GoY-dd-tdf"/>
+                                            <constraint firstAttribute="height" constant="40" id="mmU-Fw-62O"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="GoY-dd-tdf"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="MTb-R5-vYk" firstAttribute="centerX" secondItem="BnH-ny-tXY" secondAttribute="centerX" id="0Rw-IC-m8G"/>
+                                    <constraint firstAttribute="trailing" secondItem="3xW-LI-z0H" secondAttribute="trailing" id="BNn-6e-X3B"/>
+                                    <constraint firstItem="MTb-R5-vYk" firstAttribute="leading" secondItem="BnH-ny-tXY" secondAttribute="leading" constant="30" id="HfD-FU-Jli"/>
+                                    <constraint firstItem="MTb-R5-vYk" firstAttribute="top" secondItem="3xW-LI-z0H" secondAttribute="bottom" constant="15" id="Hh8-lJ-9wt"/>
+                                    <constraint firstItem="3xW-LI-z0H" firstAttribute="leading" secondItem="BnH-ny-tXY" secondAttribute="leading" id="Yzi-Ik-EH2"/>
+                                    <constraint firstAttribute="trailing" secondItem="MTb-R5-vYk" secondAttribute="trailing" constant="30" id="hVR-YP-XAa"/>
+                                    <constraint firstItem="3xW-LI-z0H" firstAttribute="centerY" secondItem="BnH-ny-tXY" secondAttribute="centerY" id="kcT-w8-1vR"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0Rw-IC-m8G"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4z-Hk-ymj">
+                                <rect key="frame" x="30" y="433" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="6lv-9c-WUG"/>
+                                    <constraint firstAttribute="height" constant="30" id="TGF-Ec-5tZ"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="chevron.left" catalog="system"/>
+                                <connections>
+                                    <action selector="onLeftBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FR1-Sk-cOr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIa-QB-qjs">
+                                <rect key="frame" x="354" y="433" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0Hb-z3-Mcj"/>
+                                    <constraint firstAttribute="width" constant="30" id="SXU-7F-ucc"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="chevron.right" catalog="system"/>
+                                <connections>
+                                    <action selector="onRightBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CBB-fo-Ut9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="q4z-Hk-ymj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5t9-Iq-luf"/>
+                            <constraint firstItem="q4z-Hk-ymj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="AiM-f9-alG"/>
+                            <constraint firstItem="BnH-ny-tXY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="MTj-zm-gMj"/>
+                            <constraint firstItem="BnH-ny-tXY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q02-f3-ae6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OIa-QB-qjs" secondAttribute="trailing" constant="30" id="ZXa-gs-CIb"/>
+                            <constraint firstItem="BnH-ny-tXY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oz2-J5-klq"/>
+                            <constraint firstItem="OIa-QB-qjs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uJj-ub-AkG"/>
+                            <constraint firstItem="BnH-ny-tXY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xHo-Jp-QfX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="leftBtn" destination="q4z-Hk-ymj" id="Ubo-Ag-Fjv"/>
+                        <outlet property="myPageControl" destination="MTb-R5-vYk" id="ouS-rH-dqb"/>
+                        <outlet property="myPagerView" destination="3xW-LI-z0H" id="Mz8-BO-SWK"/>
+                        <outlet property="rightBtn" destination="OIa-QB-qjs" id="2Oq-eU-Lhb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
+    </resources>
+</document>
